@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package intro;
 
 /**
  * Created by User on 19.02.2016.

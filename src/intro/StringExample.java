@@ -1,3 +1,5 @@
+package intro;
+
 /**
  * Created by User on 19.02.2016.
  */
@@ -37,7 +39,7 @@ public class StringExample {
         System.out.println(str8);
     }
 
-    private static int getNumberOfSymbols(char symbol, String s) {
+    public static int getNumberOfSymbols(char symbol, String s) {
 
         int sum = 0;
         for (int i = 0; i < s.length(); i++) {
