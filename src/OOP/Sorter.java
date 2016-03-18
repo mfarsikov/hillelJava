@@ -7,14 +7,15 @@ import java.util.Comparator;
  * Created by MBCNEWMAIN on 11.03.2016.
  */
 public class Sorter {
+
     public void sort(Object[] unsorted, Comparator comparator) {
         boolean swap = false;
         do {
             swap = false;
             for (int i = 0; i < unsorted.length - 1; i++) {
 
-                if (comparator.compare(unsorted[i], unsorted[i + 1])> 0) {
-                //if (unsorted[i].compareTo(unsorted[i + 1]) > 0) {
+                if (comparator.compare(unsorted[i], unsorted[i + 1]) > 0) {
+                    //if (unsorted[i].compareTo(unsorted[i + 1]) > 0) {
                     Object temp = unsorted[i];
                     unsorted[i] = unsorted[i + 1];
                     unsorted[i + 1] = temp;
@@ -29,9 +30,9 @@ public class Sorter {
         String[] s = {"a", "b", "e", "c"};
         Cat[] cats = new Cat[0];
 
-        Cat cat1 = new Cat("asd","dfdf", 10);
+        Cat cat1 = new Cat("asd", "dfdf", 10);
 
-        Cat cat2 = new Cat("dfd","df", 4);
+        Cat cat2 = new Cat("dfd", "df", 4);
 
         cat1.compareTo(cat2);
 
@@ -44,7 +45,6 @@ public class Sorter {
 
         new Sorter().sort(cats, comparator);
         System.out.println(Arrays.toString(s));
-
 
 
     }
