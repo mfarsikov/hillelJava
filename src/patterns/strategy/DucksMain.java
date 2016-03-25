@@ -1,6 +1,6 @@
-package patterns;
+package patterns.strategy;
 
-import patterns.fly.Rocket;
+import patterns.strategy.fly.Rocket;
 
 /**
  * Created by MBCNEWMAIN on 15.03.2016.

@@ -1,7 +1,7 @@
-package patterns;
+package patterns.strategy;
 
-import patterns.fly.FlyNoWay;
-import patterns.quack.Squick;
+import patterns.strategy.fly.FlyNoWay;
+import patterns.strategy.quack.Squick;
 
 /**
  * Created by MBCNEWMAIN on 15.03.2016.

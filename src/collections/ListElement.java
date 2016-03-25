@@ -37,4 +37,12 @@ public class ListElement {
             next.add(o);
         }
     }
+
+    public Object getValue() {
+        return value;
+    }
+
+    public ListElement getNext() {
+        return next;
+    }
 }
