@@ -5,12 +5,13 @@ import java.util.Random;
 /**
  * Created by MBCNEWMAIN on 29.03.2016.
  */
-public class ForecastDisplay {
+public class ForecastDisplay implements Observer {
     private int temperature;
     private int humidity;
     private int pressure;
     private Random random = new Random();
 
+    @Override
     public void update(int temperature, int humidity, int pressure) {
         this.temperature = randomize(temperature);
         this.humidity = randomize(humidity);
