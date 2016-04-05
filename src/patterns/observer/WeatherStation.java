@@ -23,7 +23,7 @@ public class WeatherStation {
 
     public void stateChanged() {
         for (Observer observer : observers) {
-            observer.update(temperature, humidity, pressure);
+            observer.update(this);
         }
     }
 
