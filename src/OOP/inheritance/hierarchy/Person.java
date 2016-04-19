@@ -1,9 +1,11 @@
 package OOP.inheritance.hierarchy;
 
+import java.io.Serializable;
+
 /**
  * Created by MBCNEWMAIN on 04.03.2016.
  */
-public class Person extends Object {
+public class Person extends Object implements Serializable {
     private String name;
 
 
@@ -14,6 +16,7 @@ public class Person extends Object {
 
     /**
      * this constructor creates person with name
+     *
      * @param name person's name
      */
     public Person(String name) {
