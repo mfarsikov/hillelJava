@@ -1,5 +1,7 @@
 package OOP.inheritance.hierarchy;
 
+import IO.Car;
+
 import java.io.Serializable;
 
 /**
@@ -8,10 +10,11 @@ import java.io.Serializable;
 public class Person extends Object implements Serializable {
     private String name;
 
+    private Car car;
 
     @Deprecated
     public Person() {
-
+        System.out.println("in default person constructor");
     }
 
     /**
@@ -20,6 +23,7 @@ public class Person extends Object implements Serializable {
      * @param name person's name
      */
     public Person(String name) {
+        System.out.println("in person constructor with one parameter");
         this.name = name;
     }
 
@@ -29,6 +33,18 @@ public class Person extends Object implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setCar(Car car){
+        this.car = car;
+    }
+
+    public Car getCar(){
+        return car;
+    }
+
+    public boolean hasCar(){
+        return car != null;
     }
 
     public void greeting() {
