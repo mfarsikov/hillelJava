@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.bank;
 
 /**
  * Created by MBCNEWMAIN on 29.04.2016.

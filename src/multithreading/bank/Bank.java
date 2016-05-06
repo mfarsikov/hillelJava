@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.bank;
 
 /**
  * Created by MBCNEWMAIN on 29.04.2016.
@@ -27,5 +27,9 @@ public class Bank {
         message += " Account2: " + account2;
 
         System.out.println(message);
+    }
+
+    public void sayHallo(){
+        System.out.println("hallo!");
     }
 }

@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.bank;
 
 import java.util.Random;
 
