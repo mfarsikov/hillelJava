@@ -5,10 +5,7 @@ import OOP.inheritance.hierarchy.Manager;
 import OOP.inheritance.hierarchy.Person;
 import multithreading.bank.Bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by MBCNEWMAIN on 06.05.2016.
@@ -60,6 +57,9 @@ public class GenericsMain {
         copy(employees, new ArrayList<>());
 
         List<Employee> employees1 = copy(managers);
+
+
+        fire(Collections.<Employee>emptyList());
     }
 
     /*public static void fire(List<Manager> employees){
@@ -67,6 +67,8 @@ public class GenericsMain {
             System.out.println(employee.getName() + " is fired");
         }
     }*/
+
+
 
     public static void fire(List<? extends Employee> employees){
         for(Employee employee : employees){
