@@ -5,7 +5,7 @@ package patterns.singleton;
  */
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-
+/*
         TheGodSingleton god1;
         TheGodSingleton god2;
         int i = 0;
@@ -25,7 +25,7 @@ public class Main {
         } while (god1 == god2);
 
         System.out.println("Heretic! attempts: " + i);
-
+*/
     }
 
     private static void lazyExample() throws InterruptedException {

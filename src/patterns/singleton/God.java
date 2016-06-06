@@ -5,7 +5,14 @@ package patterns.singleton;
  */
 public interface God {
     void create();
+
     void heal();
 
     String getName();
+
+    default void resurect() {
+        System.out.println("Resurected");
+    }
+
+
 }
