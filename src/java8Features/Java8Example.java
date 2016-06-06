@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 /**
  * Created by MBCNEWMAIN on 06.06.2016.
@@ -23,28 +26,44 @@ public class Java8Example {
         apples.add(new Apple(100, "Green", 11));
         apples.add(new Apple(250, "Yellow", 15));
 
-        AppleTester greenTester = (apple, reversed) -> {
-            boolean isGreen = apple.getColor().equals("Green");
-            if (reversed) {
-                return !isGreen;
-            }else {
-                return isGreen;
-            }
-        };
+        print(apples, apple -> String.valueOf(apple.getPrice()));
 
-        List<Apple> greenApples = select(apples, greenTester);
-        System.out.println(greenApples);
+        Function<Apple, String> appleStringFunction = apple -> apple.getColor();
 
-        AppleTester heavyTester = (apple, x) -> apple.getWeight() > 200;
-
-        List<Apple> heavyApples = select(apples, heavyTester);
-        System.out.println(heavyApples);
+        print(apples, appleStringFunction);
     }
 
-    public static List<Apple> select(List<Apple> apples, AppleTester tester) {
+    private static void print(List<Apple> apples, Function<Apple, String> appleToString) {
+        for (Apple apple : apples) {
+            System.out.println(appleToString.apply(apple));
+        }
+    }
+
+
+    private static void methodReferenceExample(List<Apple> apples) {
+        Consumer<Apple> applePrinter = System.out::println;
+        apples.forEach(applePrinter);
+    }
+
+    private static void functionalInterfaces(List<Apple> apples) {
+        Predicate<Apple> isGreen = apple -> apple.getColor().equals("Green");
+
+        List<Apple> greenApples = select(apples, isGreen);
+        System.out.println(greenApples);
+
+        Predicate<Apple> isHeavy = apple -> apple.getWeight() > 200;
+
+        List<Apple> heavyApples = select(apples, isHeavy);
+        System.out.println(heavyApples);
+
+        Predicate<Apple> heavyAndGreen = isHeavy.and(isGreen);
+        System.out.println(select(apples, heavyAndGreen));
+    }
+
+    public static List<Apple> select(List<Apple> apples, Predicate<Apple> tester) {
         List<Apple> result = new ArrayList<>();
         for (Apple apple : apples) {
-            if (tester.test(apple, false)) {
+            if (tester.test(apple)) {
                 result.add(apple);
             }
         }

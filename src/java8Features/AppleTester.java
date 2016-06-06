@@ -5,5 +5,5 @@ package java8Features;
  */
 @FunctionalInterface
 public interface AppleTester {
-    boolean test(Apple apple, boolean reversed);
+    boolean test(Apple apple);
 }
