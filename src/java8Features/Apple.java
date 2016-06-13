@@ -1,5 +1,7 @@
 package java8Features;
 
+import javafx.scene.layout.BorderImage;
+
 /**
  * Created by MBCNEWMAIN on 06.06.2016.
  */
@@ -7,6 +9,10 @@ public class Apple {
     private int weight;
     private String color;
     private int price;
+
+    public Apple(){
+
+    }
 
     public Apple(int weight, String color, int price) {
         this.weight = weight;
@@ -23,6 +29,7 @@ public class Apple {
     }
 
     public int getPrice() {
+        System.out.println("get price called");
         return price;
     }
 
@@ -34,4 +41,14 @@ public class Apple {
                 ", price=" + price +
                 '}';
     }
+
+    public boolean isGreen() {
+        System.out.println("Is green called");
+        return color.equals("Green");
+    }
+
+    public boolean isHeavy() {
+        return weight > 200;
+    }
+
 }
